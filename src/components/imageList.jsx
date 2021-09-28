@@ -1,17 +1,17 @@
-import Images from './ImageBoard';
-
 
 function ImageList(props) {
 
-    const imagesHTML = props.images.map(imageWithCap => <Images key={imageWithCap.id} {...imageWithCap} />)
+
+    const imagesHTML = props.images.map(image => (
+        <li>
+            <img src={image.url} alt="" />
+            <caption>{image.text}</caption>
+        </li>
+    ));
 
 
     return (
-        <>
-            <container>
-                {imagesHTML}
-            </container>
-        </>
+        <ul>{imagesHTML}</ul>
     )
 
 }

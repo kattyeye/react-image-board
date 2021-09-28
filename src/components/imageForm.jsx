@@ -9,7 +9,7 @@ function ImageForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.addTodo(e.target.text.value);
+        props.addImage(e.target.text.value);
         setText('');
     }
 

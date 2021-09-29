@@ -28,8 +28,8 @@ function ImageForm(props) {
 
     return (
         <form onSubmit={handleSubmit} >
-            <input value={url} onChange={handleUrlChange} type="url" name="url-input" id="new-image-url" />
-            <input value={text} onChange={handleTextChange} type="text" name="caption-input" id="new-image-caption" />
+            <input value={url} onChange={handleUrlChange} type="url" name="url-input" id="new-image-url" placeholder='Image URL' />
+            <input value={text} onChange={handleTextChange} type="text" name="caption-input" id="new-image-caption" placeholder='Image Caption' />
             <button type="submit">Submit</button>
         </form>
     )

@@ -4,7 +4,7 @@ function ImageList(props) {
 
     const imagesHTML = props.images.map(image => (
         <li>
-            <img src={image.url} alt="" />
+            <img src={image.url} alt={image.text} />
             <caption>{image.text}</caption>
         </li>
     ));

@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import ImageForm from './ImageForm';
 import ImageList from './ImageList';
-
+import Image from './Image.css'
 
 function ImageBoard() {
 
     const [images, setImages] = useState([]);
-    const [counter, setCounter] = useState(2);
-
+    const [counter, setCounter] = useState(3);
+    const [showDropDown, setShowDropDown] = useState(false);
 
     useEffect(() => {
         setImages([
@@ -31,27 +31,35 @@ function ImageBoard() {
 
     }, []);
 
-    function addImage(url) {
-        const newImage = { id: counter, url, text: '' };
+    console.log({ images })
+
+
+    function addImage(url, text) {
+        const newImage = { id: counter, url, text };
         setImages([...images, newImage]);
+        console.log({ images })
         setCounter(counter + 1);
+        console.log({ images })
     }
-
-    // function addCaption(text) {
-    //     const newCaption = { id: counter, text };
-    //     setCaption([...captions, newCaption]);
-    //     setCounter(counter + 1);
-    // }
-
 
 
 
     return (
         <div className="App">
+
             <h1>React Image Board</h1>
-            <ImageForm addImage={addImage} />
+            {showDropDown &&
+                <div>
+                    <ImageForm addImage={addImage} />
+                    <button onClick={() => { setShowDropDown(false) }}>Close</button>
+                </div>
+            }
+            {!showDropDown &&
+                < button onClick={() => { setShowDropDown(true) }}>Open</button>
+            }
+
             <ImageList images={images} />
-        </div>
+        </div >
     );
 }
 

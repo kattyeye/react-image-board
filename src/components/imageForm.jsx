@@ -7,19 +7,29 @@ function ImageForm(props) {
 
     {/*copied from notes*/ }
 
+
     function handleSubmit(e) {
         e.preventDefault();
-        props.addImage(e.target.text.value);
-        setText('');
+        props.addImage(url, text);
+        console.log({ url })
+        setText('')
+        setUrl('');
+
+    }
+
+    function handleTextChange(e) {
+        setText(e.target.value);
+    }
+
+    function handleUrlChange(e) {
+        setUrl(e.target.value)
     }
 
 
-
-
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="url" name="url-input" id="new-image-url" />
-            <input type="text" name="caption-input" id="new-image-caption" />
+        <form onSubmit={handleSubmit} >
+            <input value={url} onChange={handleUrlChange} type="url" name="url-input" id="new-image-url" />
+            <input value={text} onChange={handleTextChange} type="text" name="caption-input" id="new-image-caption" />
             <button type="submit">Submit</button>
         </form>
     )

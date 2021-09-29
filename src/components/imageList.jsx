@@ -3,8 +3,8 @@ function ImageList(props) {
 
 
     const imagesHTML = props.images.map(image => (
-        <li style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginBottom: '100px' }}>
-            <img style={{ width: "400px", height: '100%', border: 'none', borderRadius: '10px' }} src={image.url} alt={image.text} />
+        <li style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '%', flexDirection: 'column', marginBottom: '100px', padding: '20px', border: 'none', borderRadius: '10px' }}>
+            <img style={{ border: 'none', borderRadius: '10px', width: '100%', boxShadow: ' gray 5px 5px 10px 5px', marginBottom: '20px' }} src={image.url} alt={image.text} />
             <caption>{image.text}</caption>
             <button type="button" onClick={() => props.deleteImage(props.id)}>Delete</button>
         </li>
@@ -12,7 +12,7 @@ function ImageList(props) {
 
 
     return (
-        <ul style={{ paddingInlineStart: '0px' }}>{imagesHTML}</ul>
+        <ul style={{ width: '60%', paddingInlineStart: '0px' }}>{imagesHTML}</ul>
     )
 
 }

@@ -63,7 +63,7 @@ function ImageBoard() {
             }
 
             <h1 style={{ fontFamily: "roboto", textTransform: 'uppercase', fontWeight: 900, textAlign: 'center', marginBottom: '100px' }}>React Image Board</h1>
-
+            {/* <ImageForm addImage={addImage} /> */}
             <ImageList images={images} deleteImage={deleteImage} />
         </div >
     );

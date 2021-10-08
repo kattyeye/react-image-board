@@ -52,7 +52,7 @@ function ImageBoard() {
 
     return (
         <div className="App" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            {showDropDown &&
+            {/* {showDropDown &&
                 <div>
                     <button style={{ fontFamily: "roboto", textTransform: 'uppercase', fontWeight: 900, padding: 20 }} onClick={() => { setShowDropDown(false) }}>Close</button>
                     <ImageForm addImage={addImage} />
@@ -60,10 +60,10 @@ function ImageBoard() {
             }
             {!showDropDown &&
                 < button style={{ fontFamily: "roboto", textTransform: 'uppercase', fontWeight: 900, padding: 20 }} onClick={() => { setShowDropDown(true) }}>Add Image</button>
-            }
+            } */}
 
             <h1 style={{ fontFamily: "roboto", textTransform: 'uppercase', fontWeight: 900, textAlign: 'center', marginBottom: '100px' }}>React Image Board</h1>
-            {/* <ImageForm addImage={addImage} /> */}
+            <ImageForm addImage={addImage} />
             <ImageList images={images} deleteImage={deleteImage} />
         </div >
     );
